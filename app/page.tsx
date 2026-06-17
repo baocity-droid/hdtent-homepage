@@ -1,13 +1,9 @@
 import {
   ArrowRight,
   CheckCircle2,
-  ClipboardList,
-  Mail,
   MessageCircle,
   Phone,
   MapPin,
-  Ruler,
-  Send,
   SquareArrowOutUpRight
 } from "lucide-react";
 import Image from "next/image";
@@ -82,14 +78,14 @@ function Hero() {
           <p className="mt-5 max-w-xl text-lg leading-8 text-steel-100">
             {site.subHeadline}
           </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
             <a
               href={site.phoneHref}
               data-ga-event="phone_click"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-brand-500 px-5 text-base font-extrabold text-white transition hover:bg-brand-700"
             >
               <Phone className="h-5 w-5" />
-              전화문의
+              전화상담
             </a>
             <a
               href={site.kakaoHref}
@@ -101,13 +97,6 @@ function Hero() {
               <MessageCircle className="h-5 w-5" />
               카카오톡 상담
             </a>
-            <Link
-              href="/contact"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-white px-5 text-base font-extrabold text-steel-950 transition hover:bg-brand-50"
-            >
-              <ClipboardList className="h-5 w-5" />
-              견적문의
-            </Link>
           </div>
         </div>
       </div>
@@ -333,14 +322,6 @@ export default function Home() {
                   대표전화 {site.phone}
                 </a>
                 <a
-                  href={site.emailHref}
-                  data-ga-event="email_click"
-                  className="flex min-h-14 items-center gap-3 rounded border border-steel-100 bg-steel-50 px-4 font-extrabold text-steel-950"
-                >
-                  <Mail className="h-5 w-5 text-brand-700" />
-                  이메일 문의 {site.email}
-                </a>
-                <a
                   href={site.kakaoHref}
                   data-ga-event="kakao_click"
                   target="_blank"
@@ -380,18 +361,26 @@ export default function Home() {
                 현장 정보
                 <textarea className="mt-2 min-h-36 w-full rounded border border-steel-100 bg-white p-3 outline-none focus:border-brand-500" />
               </label>
-              <a
-                href={site.emailHref}
-                data-ga-event="email_click"
-                className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded bg-brand-700 px-5 text-base font-extrabold text-white transition hover:bg-brand-900 sm:w-auto"
-              >
-                <Send className="h-5 w-5" />
-                이메일로 문의하기
-              </a>
-              <p className="mt-4 flex gap-2 text-sm leading-6 text-steel-500">
-                <Ruler className="mt-0.5 h-4 w-4 shrink-0 text-brand-700" />
-                정확한 견적은 현장 조건 확인 후 안내됩니다.
-              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                <a
+                  href={site.phoneHref}
+                  data-ga-event="phone_click"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-brand-700 px-5 text-base font-extrabold text-white transition hover:bg-brand-900"
+                >
+                  <Phone className="h-5 w-5" />
+                  전화상담
+                </a>
+                <a
+                  href={site.kakaoHref}
+                  data-ga-event="kakao_click"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[#fee500] px-5 text-base font-extrabold text-[#191600] transition hover:bg-[#f7dc00]"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                  카카오톡 상담
+                </a>
+              </div>
             </form>
           </div>
         </section>
