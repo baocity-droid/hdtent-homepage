@@ -7,7 +7,8 @@ import {
   Phone,
   MapPin,
   Ruler,
-  Send
+  Send,
+  SquareArrowOutUpRight
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -127,6 +128,50 @@ function SectionTitle({
       </h2>
       <p className="mt-3 max-w-2xl text-base leading-7 text-steel-500">{description}</p>
     </div>
+  );
+}
+
+function NaverMapButton({ className = "" }: { className?: string }) {
+  return (
+    <a
+      href={site.naverMapHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[#03c75a] px-4 text-sm font-extrabold text-white transition hover:bg-[#02b350] ${className}`}
+    >
+      <MapPin className="h-5 w-5" />
+      네이버지도에서 보기
+      <SquareArrowOutUpRight className="h-4 w-4" />
+    </a>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-steel-100 bg-steel-950 px-4 py-10 text-white sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <p className="text-xl font-extrabold">{site.name}</p>
+            <dl className="mt-4 grid gap-2 text-sm leading-6 text-steel-100 sm:grid-cols-2">
+              <div>
+                <dt className="font-bold text-white">대표자</dt>
+                <dd>{site.representative}</dd>
+              </div>
+              <div>
+                <dt className="font-bold text-white">대표번호</dt>
+                <dd>{site.phone}</dd>
+              </div>
+              <div className="sm:col-span-2">
+                <dt className="font-bold text-white">주소</dt>
+                <dd>{site.address}</dd>
+              </div>
+            </dl>
+          </div>
+          <NaverMapButton className="w-full md:w-auto" />
+        </div>
+      </div>
+    </footer>
   );
 }
 
@@ -297,6 +342,7 @@ export default function Home() {
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-700" />
                   {site.address}
                 </p>
+                <NaverMapButton className="w-full" />
               </div>
             </div>
             <form className="rounded border border-steel-100 bg-steel-50 p-5">
@@ -337,6 +383,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

@@ -19,7 +19,9 @@ export const site = {
   phoneHref: "tel:02-2687-5811",
   email: "baocity@naver.com",
   emailHref: "mailto:baocity@naver.com",
-  address: "서울시 구로구 경인로53길15 나동 1403호",
+  address: "서울시 구로구 경인로53길 15 나동 1403호",
+  naverMapHref:
+    "https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B5%AC%EB%A1%9C%EA%B5%AC%20%EA%B2%BD%EC%9D%B8%EB%A1%9C53%EA%B8%B815%20%EB%82%98%EB%8F%991403%ED%98%B8",
   kakaoHref: "https://pf.kakao.com/_ylnXX",
   description:
     "정전기방지용 싸이로망, 여과포, 산업용 캔바스, 자바라, 각종 천막 주문제작 전문 업체 현대천막입니다.",
