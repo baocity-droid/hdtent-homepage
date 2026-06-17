@@ -34,6 +34,7 @@ function Header() {
         <div className="flex items-center gap-2">
           <a
             href={site.phoneHref}
+            data-ga-event="phone_click"
             className="inline-flex h-10 items-center gap-2 rounded bg-brand-700 px-3 text-sm font-bold text-white shadow-soft transition hover:bg-brand-900"
           >
             <Phone className="h-4 w-4" />
@@ -42,6 +43,7 @@ function Header() {
           </a>
           <a
             href={site.kakaoHref}
+            data-ga-event="kakao_click"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-10 items-center justify-center gap-2 rounded border border-[#f3d600] bg-[#fee500] px-3 text-sm font-extrabold text-[#191600] transition hover:bg-[#f7dc00]"
@@ -83,6 +85,7 @@ function Hero() {
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             <a
               href={site.phoneHref}
+              data-ga-event="phone_click"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-brand-500 px-5 text-base font-extrabold text-white transition hover:bg-brand-700"
             >
               <Phone className="h-5 w-5" />
@@ -90,6 +93,7 @@ function Hero() {
             </a>
             <a
               href={site.kakaoHref}
+              data-ga-event="kakao_click"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[#fee500] px-5 text-base font-extrabold text-[#191600] transition hover:bg-[#f7dc00]"
@@ -322,6 +326,7 @@ export default function Home() {
             <div className="space-y-3">
               <a
                 href={site.phoneHref}
+                data-ga-event="phone_click"
                 className="flex min-h-14 items-center gap-3 rounded bg-brand-700 px-4 font-extrabold text-white"
               >
                 <Phone className="h-5 w-5" />
@@ -329,6 +334,7 @@ export default function Home() {
                 </a>
                 <a
                   href={site.emailHref}
+                  data-ga-event="email_click"
                   className="flex min-h-14 items-center gap-3 rounded border border-steel-100 bg-steel-50 px-4 font-extrabold text-steel-950"
                 >
                   <Mail className="h-5 w-5 text-brand-700" />
@@ -336,6 +342,7 @@ export default function Home() {
                 </a>
                 <a
                   href={site.kakaoHref}
+                  data-ga-event="kakao_click"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex min-h-14 items-center gap-3 rounded border border-[#f3d600] bg-[#fee500] px-4 font-extrabold text-[#191600]"
@@ -375,6 +382,7 @@ export default function Home() {
               </label>
               <a
                 href={site.emailHref}
+                data-ga-event="email_click"
                 className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded bg-brand-700 px-5 text-base font-extrabold text-white transition hover:bg-brand-900 sm:w-auto"
               >
                 <Send className="h-5 w-5" />

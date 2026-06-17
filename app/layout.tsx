@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
+import { GoogleAnalyticsPageView } from "@/components/GoogleAnalyticsPageView";
 import { heroImage, site } from "@/lib/site";
+
+const gaMeasurementId = "G-15P0Z3D0CY";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
@@ -57,7 +61,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gaMeasurementId}', {
+              send_page_view: false
+            });
+          `}
+        </Script>
+        <GoogleAnalyticsPageView />
+        {children}
+      </body>
     </html>
   );
 }
