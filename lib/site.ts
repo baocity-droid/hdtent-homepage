@@ -119,7 +119,7 @@ export const strengths = [
   }
 ];
 
-export const heroImage = "/images/projects/hero-large-silo.jpg";
+export const heroImage = "/images/main-hero.png";
 
 export const projectCategories = businessAreas.map((area) => ({
   title: area.title,
