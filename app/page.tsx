@@ -140,7 +140,7 @@ function NaverMapButton({ className = "" }: { className?: string }) {
       className={`inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[#03c75a] px-4 text-sm font-extrabold text-white transition hover:bg-[#02b350] ${className}`}
     >
       <MapPin className="h-5 w-5" />
-      네이버지도에서 보기
+      네이버 지도 길찾기
       <SquareArrowOutUpRight className="h-4 w-4" />
     </a>
   );
@@ -187,8 +187,13 @@ export default function Home() {
             <SectionTitle
               eyebrow="About"
               title="현장을 이해하는 제작 중심 기업"
-              description={site.intro}
+              description="산업현장에 최적화된 맞춤 제작 서비스를 제공합니다."
             />
+            <div className="mb-8 max-w-3xl space-y-4 text-base leading-8 text-steel-600">
+              {site.introParagraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
             <div className="mb-8 grid gap-3 rounded border border-steel-100 bg-steel-50 p-5 text-sm font-bold text-steel-800 md:grid-cols-2 lg:grid-cols-4">
               <div>
                 <p className="text-steel-500">회사명</p>
@@ -231,7 +236,7 @@ export default function Home() {
             <SectionTitle
               eyebrow="Business"
               title="사업분야"
-              description="정전기방지용 싸이로망, 여과포, 산업용 캔바스, 자바라, 각종 천막을 현장 조건에 맞춰 주문제작합니다."
+              description="정전기방지용 싸이로망, 여과포 제작, 산업용 캔바스 제작, 자바라 제작, 집진설비용 후드 및 캔바스, 각종 특수 천막을 현장 조건에 맞춰 주문제작합니다."
             />
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {businessAreas.map((area) => {
@@ -320,7 +325,7 @@ export default function Home() {
                 className="flex min-h-14 items-center gap-3 rounded bg-brand-700 px-4 font-extrabold text-white"
               >
                 <Phone className="h-5 w-5" />
-                  전화문의 {site.phone}
+                  대표전화 {site.phone}
                 </a>
                 <a
                   href={site.emailHref}

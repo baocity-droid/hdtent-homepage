@@ -19,16 +19,20 @@ export const site = {
   phoneHref: "tel:02-2687-5811",
   email: "baocity@naver.com",
   emailHref: "mailto:baocity@naver.com",
-  address: "서울시 구로구 경인로53길 15 나동 1403호",
+  address: "서울특별시 구로구 경인로53길 15 나동 1403호",
   naverMapHref:
     "https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B5%AC%EB%A1%9C%EA%B5%AC%20%EA%B2%BD%EC%9D%B8%EB%A1%9C53%EA%B8%B815%20%EB%82%98%EB%8F%991403%ED%98%B8",
   kakaoHref: "https://pf.kakao.com/_ylnXX",
   description:
-    "정전기방지용 싸이로망, 여과포, 산업용 캔바스, 자바라, 각종 천막 주문제작 전문 업체 현대천막입니다.",
-  intro:
-    "현대천막은 정전기방지용 싸이로망, 여과포, 산업용 캔바스, 자바라, 각종 천막을 주문제작하는 산업용 특수 천막 전문 업체입니다. 현장 조건과 설비 구조에 맞춘 맞춤 제작을 통해 산업현장에 필요한 제품을 정확하고 튼튼하게 제작합니다.",
-  headline: "정전기방지용 싸이로망 · 여과포 · 산업용 캔바스 전문",
-  subHeadline: "산업설비 현장에 맞춘 캔바스, 자바라, 천막 주문제작",
+    "정전기방지용 싸이로망, 여과포, 산업용 캔바스, 자바라 및 특수 천막 주문제작 전문업체 현대천막",
+  introParagraphs: [
+    "현대천막은 정전기방지용 싸이로망, 여과포, 산업용 캔바스, 자바라 및 각종 특수 천막을 전문 제작하는 업체입니다.",
+    "다년간의 제작 경험과 기술력을 바탕으로 산업설비, 집진설비, 저장설비 등 다양한 산업현장에 최적화된 제품을 공급하고 있으며 고객의 요구사항에 맞춘 맞춤 제작 서비스를 제공합니다.",
+    "품질과 내구성을 최우선으로 생각하며 신속한 제작과 납품을 통해 고객 만족을 실현하고 있습니다."
+  ],
+  headline: "산업용 캔바스 · 정전기방지용 싸이로망 전문 제작",
+  subHeadline:
+    "산업현장에 최적화된 맞춤형 캔바스, 자바라, 여과포 및 특수 천막을 제작합니다.",
   nav: [
     { label: "메인", href: "/" },
     { label: "회사소개", href: "/about" },
@@ -54,8 +58,8 @@ export const businessAreas = [
     ]
   },
   {
-    title: "여과포",
-    description: "분진, 이송, 집진 설비 조건에 맞춘 산업용 여과포 제작",
+    title: "여과포 제작",
+    description: "분진, 이송, 집진 설비 조건에 맞춘 여과포 제작",
     icon: Factory,
     image: "/images/projects/dust-collector-duct.jpeg",
     gallery: [
@@ -64,7 +68,7 @@ export const businessAreas = [
     ]
   },
   {
-    title: "산업용 캔바스",
+    title: "산업용 캔바스 제작",
     description: "공장 설비, 연결부, 보호 커버에 맞춘 산업용 캔바스 제작",
     icon: Layers3,
     image: "/images/projects/industrial-canvas-flange.jpeg",
@@ -75,7 +79,7 @@ export const businessAreas = [
     ]
   },
   {
-    title: "자바라",
+    title: "자바라 제작",
     description: "현장 치수와 작동 조건을 반영한 설비 보호용 자바라 제작",
     icon: Wrench,
     image: "/images/projects/installed-bellows.jpg",
@@ -87,7 +91,18 @@ export const businessAreas = [
     ]
   },
   {
-    title: "각종 천막 주문제작",
+    title: "집진설비용 후드 및 캔바스",
+    description: "집진설비와 덕트 연결부에 맞춘 후드, 캔바스, 연결 커버 제작",
+    icon: Factory,
+    image: "/images/projects/dust-collector-duct.jpeg",
+    gallery: [
+      "/images/projects/dust-collector-duct.jpeg",
+      "/images/projects/industrial-canvas-flange.jpeg",
+      "/images/projects/silo-canvas-walkway.jpeg"
+    ]
+  },
+  {
+    title: "각종 특수 천막 주문제작",
     description: "표준 규격으로 해결하기 어려운 천막과 산업용 특수 제품 맞춤 제작",
     icon: Hammer,
     image: "/images/projects/custom-cover-bag.jpeg",

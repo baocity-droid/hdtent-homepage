@@ -5,7 +5,7 @@ import { heroImage, site } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: "현대천막 | 정전기방지용 싸이로망·여과포·산업용 캔바스 전문",
+    default: "현대천막 | 산업용 캔바스 · 싸이로망 · 자바라 전문 제작",
     template: "%s | 현대천막"
   },
   description: site.description,
@@ -15,13 +15,14 @@ export const metadata: Metadata = {
     "여과포",
     "산업용 캔바스",
     "자바라",
-    "천막 주문제작"
+    "집진설비용 후드",
+    "특수 천막 주문제작"
   ],
   alternates: {
     canonical: "/"
   },
   openGraph: {
-    title: "현대천막 | 정전기방지용 싸이로망·여과포·산업용 캔바스 전문",
+    title: "현대천막 | 산업용 캔바스 · 싸이로망 · 자바라 전문 제작",
     description: site.description,
     url: site.domain,
     siteName: site.name,
