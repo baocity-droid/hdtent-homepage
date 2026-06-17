@@ -33,11 +33,11 @@ export const site = {
   subHeadline:
     "산업현장에 최적화된 맞춤형 캔바스, 자바라, 여과포 및 특수 천막을 제작합니다.",
   nav: [
-    { label: "메인", href: "/" },
-    { label: "회사소개", href: "/about" },
-    { label: "사업분야", href: "/business" },
-    { label: "시공사례", href: "/portfolio" },
-    { label: "견적문의", href: "/contact" }
+    { label: "메인", href: "#home" },
+    { label: "회사소개", href: "#about" },
+    { label: "사업분야", href: "#business" },
+    { label: "시공사례", href: "#portfolio" },
+    { label: "견적문의", href: "#contact" }
   ]
 };
 

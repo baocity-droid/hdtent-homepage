@@ -57,7 +57,10 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="relative isolate min-h-[640px] overflow-hidden bg-steel-950 text-white">
+    <section
+      className="relative isolate min-h-[640px] scroll-mt-24 overflow-hidden bg-steel-950 text-white"
+      id="home"
+    >
       <Image
         src={heroImage}
         alt="현대천막 정전기방지용 싸이로망 대형 시공 현장"
@@ -175,7 +178,7 @@ export default function Home() {
       <main>
         <Hero />
 
-        <section className="bg-white px-4 py-16 sm:px-6 lg:px-8" id="about">
+        <section className="scroll-mt-24 bg-white px-4 py-16 sm:px-6 lg:px-8" id="about">
           <div className="mx-auto max-w-7xl">
             <SectionTitle
               eyebrow="About"
@@ -224,7 +227,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-4 py-16 sm:px-6 lg:px-8" id="business">
+        <section className="scroll-mt-24 px-4 py-16 sm:px-6 lg:px-8" id="business">
           <div className="mx-auto max-w-7xl">
             <SectionTitle
               eyebrow="Business"
@@ -252,7 +255,7 @@ export default function Home() {
                       <h3 className="mt-5 text-xl font-extrabold text-steel-950">{area.title}</h3>
                       <p className="mt-3 text-sm leading-6 text-steel-500">{area.description}</p>
                       <Link
-                        href="/contact"
+                        href="#contact"
                         className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-brand-700"
                       >
                         상담 요청 <ArrowRight className="h-4 w-4" />
@@ -265,7 +268,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-steel-950 px-4 py-16 text-white sm:px-6 lg:px-8" id="portfolio">
+        <section
+          className="scroll-mt-24 bg-steel-950 px-4 py-16 text-white sm:px-6 lg:px-8"
+          id="portfolio"
+        >
           <div className="mx-auto max-w-7xl">
             <SectionTitle
               eyebrow="Portfolio"
@@ -304,7 +310,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-white px-4 py-16 sm:px-6 lg:px-8" id="contact">
+        <section className="scroll-mt-24 bg-white px-4 py-16 sm:px-6 lg:px-8" id="contact">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <SectionTitle
