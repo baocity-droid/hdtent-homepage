@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/"
   },
+  verification: {
+    other: {
+      "naver-site-verification": "9a7cb9c0d655c7cdb347a45aab2a9dd74e48a0a6"
+    }
+  },
   openGraph: {
     title: "현대천막 | 산업용 캔바스 · 싸이로망 · 자바라 전문 제작",
     description: site.description,
