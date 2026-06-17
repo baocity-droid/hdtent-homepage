@@ -12,12 +12,21 @@ import {
 
 export const site = {
   name: "현대천막",
+  representative: "김진성",
   domain: "https://hdtent.co.kr",
-  phoneDisplay: "전화문의",
-  phoneHref: "tel:010-0000-0000",
-  kakaoHref: "#contact",
+  phoneDisplay: "02-2687-5811",
+  phone: "02-2687-5811",
+  phoneHref: "tel:02-2687-5811",
+  email: "baocity@naver.com",
+  emailHref: "mailto:baocity@naver.com",
+  address: "서울시 구로구 경인로53길15 나동 1403호",
+  kakaoHref: "https://pf.kakao.com/_ylnXX",
   description:
-    "산업용 캔버스, 자바라, 집진설비, 싸이로 및 호퍼, 특수 주문제작 전문 B2B 제조업체 현대천막입니다.",
+    "정전기방지용 싸이로망, 여과포, 산업용 캔바스, 자바라, 각종 천막 주문제작 전문 업체 현대천막입니다.",
+  intro:
+    "현대천막은 정전기방지용 싸이로망, 여과포, 산업용 캔바스, 자바라, 각종 천막을 주문제작하는 산업용 특수 천막 전문 업체입니다. 현장 조건과 설비 구조에 맞춘 맞춤 제작을 통해 산업현장에 필요한 제품을 정확하고 튼튼하게 제작합니다.",
+  headline: "정전기방지용 싸이로망 · 여과포 · 산업용 캔바스 전문",
+  subHeadline: "산업설비 현장에 맞춘 캔바스, 자바라, 천막 주문제작",
   nav: [
     { label: "메인", href: "/" },
     { label: "회사소개", href: "/about" },
@@ -29,29 +38,61 @@ export const site = {
 
 export const businessAreas = [
   {
-    title: "산업용 캔버스",
-    description: "공장 설비, 운송 라인, 보호 커버에 맞춘 내구성 중심 제작",
-    icon: Layers3
+    title: "정전기방지용 싸이로망",
+    description: "싸이로와 호퍼 구조에 맞춘 정전기방지용 망 및 커버 전문 제작",
+    icon: Building2,
+    image: "/images/projects/hero-large-silo.jpg",
+    gallery: [
+      "/images/projects/hero-large-silo.jpg",
+      "/images/projects/silo-hopper-front.jpeg",
+      "/images/projects/silo-canvas-corridor.jpeg",
+      "/images/projects/silo-canvas-walkway.jpeg",
+      "/images/projects/silo-hopper-side-1.jpg",
+      "/images/projects/silo-hopper-side-2.jpg"
+    ]
   },
   {
-    title: "자바라 제작",
-    description: "현장 치수와 작동 조건을 반영한 설비 보호용 자바라",
-    icon: Wrench
+    title: "여과포",
+    description: "분진, 이송, 집진 설비 조건에 맞춘 산업용 여과포 제작",
+    icon: Factory,
+    image: "/images/projects/dust-collector-duct.jpeg",
+    gallery: [
+      "/images/projects/dust-collector-duct.jpeg",
+      "/images/projects/industrial-canvas-flange.jpeg"
+    ]
   },
   {
-    title: "집진설비",
-    description: "분진 발생 환경에 필요한 덕트, 후드, 연결 부품 제작",
-    icon: Factory
+    title: "산업용 캔바스",
+    description: "공장 설비, 연결부, 보호 커버에 맞춘 산업용 캔바스 제작",
+    icon: Layers3,
+    image: "/images/projects/industrial-canvas-flange.jpeg",
+    gallery: [
+      "/images/projects/industrial-canvas-flange.jpeg",
+      "/images/projects/dust-collector-duct.jpeg",
+      "/images/projects/fabric-bellows-large.jpeg"
+    ]
   },
   {
-    title: "싸이로 및 호퍼",
-    description: "저장, 배출, 이송 흐름을 고려한 산업 설비 구성품",
-    icon: Building2
+    title: "자바라",
+    description: "현장 치수와 작동 조건을 반영한 설비 보호용 자바라 제작",
+    icon: Wrench,
+    image: "/images/projects/installed-bellows.jpg",
+    gallery: [
+      "/images/projects/installed-bellows.jpg",
+      "/images/projects/bellows-installed.jpg",
+      "/images/projects/fabric-bellows-large.jpeg",
+      "/images/projects/bellows-fabric.jpeg"
+    ]
   },
   {
-    title: "특수 주문제작",
-    description: "표준 규격으로 해결하기 어려운 현장 맞춤 제작",
-    icon: Hammer
+    title: "각종 천막 주문제작",
+    description: "표준 규격으로 해결하기 어려운 천막과 산업용 특수 제품 맞춤 제작",
+    icon: Hammer,
+    image: "/images/projects/custom-cover-bag.jpeg",
+    gallery: [
+      "/images/projects/custom-cover-bag.jpeg",
+      "/images/projects/fabric-bellows-large.jpeg"
+    ]
   }
 ];
 
@@ -63,7 +104,7 @@ export const strengths = [
   },
   {
     title: "산업용 소재 이해",
-    description: "마찰, 분진, 습도, 온도 조건에 맞는 제작 방향을 제안합니다.",
+    description: "정전기, 분진, 습도, 마찰 조건에 맞는 제작 방향을 제안합니다.",
     icon: ShieldCheck
   },
   {
@@ -78,11 +119,10 @@ export const strengths = [
   }
 ];
 
-export const cases = [
-  "산업 설비 보호 캔버스 커버",
-  "공장 라인 이동부 자바라",
-  "집진 덕트 연결 캔버스",
-  "싸이로 하부 배출부 제작",
-  "현장 특수 규격 주문 제작",
-  "노후 캔버스 교체 및 보수"
-];
+export const heroImage = "/images/projects/hero-large-silo.jpg";
+
+export const projectCategories = businessAreas.map((area) => ({
+  title: area.title,
+  description: area.description,
+  images: area.gallery
+}));

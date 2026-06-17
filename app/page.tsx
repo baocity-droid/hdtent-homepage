@@ -2,14 +2,16 @@ import {
   ArrowRight,
   CheckCircle2,
   ClipboardList,
+  Mail,
   MessageCircle,
   Phone,
+  MapPin,
   Ruler,
   Send
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { businessAreas, cases, site, strengths } from "@/lib/site";
+import { businessAreas, heroImage, projectCategories, site, strengths } from "@/lib/site";
 
 function Header() {
   return (
@@ -35,13 +37,18 @@ function Header() {
           >
             <Phone className="h-4 w-4" />
             <span className="hidden sm:inline">{site.phoneDisplay}</span>
+            <span className="sm:hidden">전화</span>
           </a>
           <a
             href={site.kakaoHref}
-            className="inline-flex h-10 items-center justify-center rounded border border-steel-100 bg-white px-3 text-sm font-bold text-steel-950 transition hover:border-brand-100 hover:text-brand-700"
-            aria-label="카카오톡 채널 문의"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded border border-[#f3d600] bg-[#fee500] px-3 text-sm font-extrabold text-[#191600] transition hover:bg-[#f7dc00]"
+            aria-label="카카오톡 상담 새 창 열기"
           >
             <MessageCircle className="h-4 w-4" />
+            <span className="hidden sm:inline">카카오톡 상담</span>
+            <span className="sm:hidden">카톡</span>
           </a>
         </div>
       </div>
@@ -53,8 +60,8 @@ function Hero() {
   return (
     <section className="relative isolate min-h-[640px] overflow-hidden bg-steel-950 text-white">
       <Image
-        src="/images/industrial-hero.png"
-        alt="산업용 캔버스와 자바라 제작 현장"
+        src={heroImage}
+        alt="현대천막 정전기방지용 싸이로망 대형 시공 현장"
         fill
         priority
         sizes="100vw"
@@ -67,23 +74,31 @@ function Hero() {
             산업설비 맞춤 제작 전문기업
           </p>
           <h1 className="text-4xl font-extrabold leading-tight tracking-normal sm:text-5xl lg:text-6xl">
-            현대천막
+            {site.headline}
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-8 text-steel-100">
-            산업용 캔버스, 자바라, 집진설비, 싸이로 및 호퍼까지 현장 조건에 맞춰
-            제작하는 B2B 제조 파트너입니다.
+            {site.subHeadline}
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
             <a
               href={site.phoneHref}
-              className="inline-flex h-12 items-center justify-center gap-2 rounded bg-brand-500 px-5 text-base font-extrabold text-white transition hover:bg-brand-700"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-brand-500 px-5 text-base font-extrabold text-white transition hover:bg-brand-700"
             >
               <Phone className="h-5 w-5" />
               전화문의
             </a>
+            <a
+              href={site.kakaoHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-[#fee500] px-5 text-base font-extrabold text-[#191600] transition hover:bg-[#f7dc00]"
+            >
+              <MessageCircle className="h-5 w-5" />
+              카카오톡 상담
+            </a>
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded bg-white px-5 text-base font-extrabold text-steel-950 transition hover:bg-brand-50"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded bg-white px-5 text-base font-extrabold text-steel-950 transition hover:bg-brand-50"
             >
               <ClipboardList className="h-5 w-5" />
               견적문의
@@ -127,8 +142,30 @@ export default function Home() {
             <SectionTitle
               eyebrow="About"
               title="현장을 이해하는 제작 중심 기업"
-              description="현대천막은 산업 설비에 필요한 캔버스와 자바라, 집진 관련 제작물을 현장 조건에 맞춰 공급합니다."
+              description={site.intro}
             />
+            <div className="mb-8 grid gap-3 rounded border border-steel-100 bg-steel-50 p-5 text-sm font-bold text-steel-800 md:grid-cols-2 lg:grid-cols-4">
+              <div>
+                <p className="text-steel-500">회사명</p>
+                <p className="mt-1 text-steel-950">{site.name}</p>
+              </div>
+              <div>
+                <p className="text-steel-500">대표자</p>
+                <p className="mt-1 text-steel-950">{site.representative}</p>
+              </div>
+              <div>
+                <p className="text-steel-500">대표번호</p>
+                <p className="mt-1 text-steel-950">{site.phone}</p>
+              </div>
+              <div>
+                <p className="text-steel-500">이메일</p>
+                <p className="mt-1 text-steel-950">{site.email}</p>
+              </div>
+              <div className="md:col-span-2 lg:col-span-4">
+                <p className="text-steel-500">주소</p>
+                <p className="mt-1 text-steel-950">{site.address}</p>
+              </div>
+            </div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {strengths.map((item) => {
                 const Icon = item.icon;
@@ -149,24 +186,35 @@ export default function Home() {
             <SectionTitle
               eyebrow="Business"
               title="사업분야"
-              description="반복 생산품부터 현장 특수 규격까지 산업 현장에 맞는 제작 품목을 다룹니다."
+              description="정전기방지용 싸이로망, 여과포, 산업용 캔바스, 자바라, 각종 천막을 현장 조건에 맞춰 주문제작합니다."
             />
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {businessAreas.map((area) => {
                 const Icon = area.icon;
                 return (
-                  <article key={area.title} className="rounded border border-steel-100 bg-white p-6 shadow-sm">
-                    <div className="flex h-12 w-12 items-center justify-center rounded bg-brand-50 text-brand-700">
-                      <Icon className="h-6 w-6" />
+                  <article key={area.title} className="overflow-hidden rounded border border-steel-100 bg-white shadow-sm">
+                    <div className="relative aspect-[4/3] bg-steel-100">
+                      <Image
+                        src={area.image}
+                        alt={`${area.title} 시공 사진`}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover"
+                      />
                     </div>
-                    <h3 className="mt-5 text-xl font-extrabold text-steel-950">{area.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-steel-500">{area.description}</p>
-                    <Link
-                      href="/contact"
-                      className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-brand-700"
-                    >
-                      상담 요청 <ArrowRight className="h-4 w-4" />
-                    </Link>
+                    <div className="p-6">
+                      <div className="flex h-12 w-12 items-center justify-center rounded bg-brand-50 text-brand-700">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="mt-5 text-xl font-extrabold text-steel-950">{area.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-steel-500">{area.description}</p>
+                      <Link
+                        href="/contact"
+                        className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-brand-700"
+                      >
+                        상담 요청 <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </div>
                   </article>
                 );
               })}
@@ -181,11 +229,32 @@ export default function Home() {
               title="시공사례"
               description="산업 현장별 치수와 사용 환경에 맞춰 다양한 제작 및 교체 작업을 진행합니다."
             />
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {cases.map((item) => (
-                <article key={item} className="rounded border border-white/10 bg-white/8 p-5">
-                  <CheckCircle2 className="h-6 w-6 text-brand-100" />
-                  <h3 className="mt-4 text-lg font-extrabold">{item}</h3>
+            <div className="space-y-10">
+              {projectCategories.map((category) => (
+                <article key={category.title}>
+                  <div className="mb-4 flex items-start gap-3">
+                    <CheckCircle2 className="mt-1 h-6 w-6 shrink-0 text-brand-100" />
+                    <div>
+                      <h3 className="text-xl font-extrabold">{category.title}</h3>
+                      <p className="mt-1 text-sm leading-6 text-steel-100">{category.description}</p>
+                    </div>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    {category.images.map((image, index) => (
+                      <div
+                        key={`${category.title}-${image}`}
+                        className="relative aspect-[4/3] overflow-hidden rounded border border-white/10 bg-white/8"
+                      >
+                        <Image
+                          src={image}
+                          alt={`${category.title} 시공 사진 ${index + 1}`}
+                          fill
+                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </article>
               ))}
             </div>
@@ -197,24 +266,37 @@ export default function Home() {
             <div>
               <SectionTitle
                 eyebrow="Contact"
-                title="견적문의"
-                description="제작 품목, 설치 장소, 대략 치수, 현장 사진이나 도면을 함께 보내주시면 상담이 빨라집니다."
-              />
-              <div className="space-y-3">
+              title="견적문의"
+              description="제작 품목, 설치 장소, 대략 치수, 현장 사진이나 도면을 함께 보내주시면 상담이 빨라집니다."
+            />
+            <div className="space-y-3">
+              <a
+                href={site.phoneHref}
+                className="flex min-h-14 items-center gap-3 rounded bg-brand-700 px-4 font-extrabold text-white"
+              >
+                <Phone className="h-5 w-5" />
+                  전화문의 {site.phone}
+                </a>
                 <a
-                  href={site.phoneHref}
-                  className="flex min-h-14 items-center gap-3 rounded bg-brand-700 px-4 font-extrabold text-white"
+                  href={site.emailHref}
+                  className="flex min-h-14 items-center gap-3 rounded border border-steel-100 bg-steel-50 px-4 font-extrabold text-steel-950"
                 >
-                  <Phone className="h-5 w-5" />
-                  전화문의
+                  <Mail className="h-5 w-5 text-brand-700" />
+                  이메일 문의 {site.email}
                 </a>
                 <a
                   href={site.kakaoHref}
-                  className="flex min-h-14 items-center gap-3 rounded border border-steel-100 bg-steel-50 px-4 font-extrabold text-steel-950"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex min-h-14 items-center gap-3 rounded border border-[#f3d600] bg-[#fee500] px-4 font-extrabold text-[#191600]"
                 >
-                  <MessageCircle className="h-5 w-5 text-brand-700" />
-                  카카오톡 채널
+                  <MessageCircle className="h-5 w-5" />
+                  카카오톡 상담
                 </a>
+                <p className="flex gap-2 rounded border border-steel-100 bg-white px-4 py-3 text-sm font-bold leading-6 text-steel-800">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-700" />
+                  {site.address}
+                </p>
               </div>
             </div>
             <form className="rounded border border-steel-100 bg-steel-50 p-5">
@@ -240,13 +322,13 @@ export default function Home() {
                 현장 정보
                 <textarea className="mt-2 min-h-36 w-full rounded border border-steel-100 bg-white p-3 outline-none focus:border-brand-500" />
               </label>
-              <button
-                type="button"
+              <a
+                href={site.emailHref}
                 className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded bg-brand-700 px-5 text-base font-extrabold text-white transition hover:bg-brand-900 sm:w-auto"
               >
                 <Send className="h-5 w-5" />
-                문의 보내기
-              </button>
+                이메일로 문의하기
+              </a>
               <p className="mt-4 flex gap-2 text-sm leading-6 text-steel-500">
                 <Ruler className="mt-0.5 h-4 w-4 shrink-0 text-brand-700" />
                 정확한 견적은 현장 조건 확인 후 안내됩니다.

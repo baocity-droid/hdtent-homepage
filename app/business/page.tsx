@@ -2,7 +2,7 @@ import Home from "../page";
 
 export const metadata = {
   title: "사업분야",
-  description: "현대천막의 산업용 캔버스, 자바라 제작, 집진설비, 싸이로 및 호퍼, 특수 주문제작"
+  description: "현대천막의 정전기방지용 싸이로망, 여과포, 산업용 캔바스, 자바라, 각종 천막 주문제작"
 };
 
 export default Home;
